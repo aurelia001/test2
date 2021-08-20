@@ -1,38 +1,104 @@
-.App {
-  text-align: center;
+body {
+  font-family: "PT Mono", monospace;
+}
+.wrapper {
+  border: 2px solid;
+  margin: 20px;
+  margin-left: 260px;
+  margin-top: 50px;
+  padding: 25px 15px 25px 15px;
+  max-width: 700px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+input[type="text"] {
+  width: 60%;
+}
+input[type="submit"],
+input[type="text"] {
+  line-height: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+input[type="submit"] {
+  margin-left: 30px;
+  margin-bottom: 20px;
+  width: 80px;
+  cursor: pointer;
+  font-weight: 600;
+  border: 2px solid;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+input[type="submit"]:hover {
+  background-color: #bbbbbb;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  margin-bottom: 20px;
+}
+.forecast-state {
+  font-size: 25px;
+  position: relative;
+  left: 10px;
+}
+.forecast-temperture {
+  font-size: 17px;
+  position: relative;
+  left: 25px;
+}
+.min-temperture {
+  opacity: 0.6;
+}
+.weekday {
+  position: relative;
+  left: 35px;
+  font-size: 23px;
+}
+.temperture-today {
+  font-size: 25px;
+}
+.wind {
+  margin-bottom: 40px;
+  position: relative;
+  left: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.humidity {
+  position: relative;
+  left: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.col {
+  font-size: 19px;
 }
-
-.App-link {
-  color: #61dafb;
+.temperture-today {
+  position: relative;
+  top: 5px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.celsius {
+  font-size: 20px;
+}
+.description {
+  text-transform: capitalize;
+}
+.refrence {
+  position: relative;
+  left: 570px;
+}
+.refrence-link {
+  text-decoration: none;
+}
+img {
+  width: 75px;
+  height: 75px;
+}
+.weather-today .active {
+  color: black;
+  text-decoration: none;
+  cursor: default;
+}
+a {
+  text-decoration: none;
 }
