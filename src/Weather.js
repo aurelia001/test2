@@ -50,7 +50,7 @@ export default function Weather() {
       </div>
       <p className="refrence">
         <a
-          href="https://github.com/aurelia001/test2"
+          href="https://github.com/aurelia001/weather-app"
           target="_blank "
           className="refrence-link"
         >
