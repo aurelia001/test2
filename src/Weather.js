@@ -1,18 +1,20 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 
 export default function Weather() {
-  const [ready, setReady] = useState(false);
-  const [weather, setWeather] = useState({});
+  const [weather, setWeather] = useState({ ready: false });
   function handleResponse(response) {
     setWeather({
+      ready: true,
       temperture: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
+      description: response.data.weather[0].description,
+      date: new Date(response.data.dt * 1000),
     });
-    setReady(true);
   }
-  if (ready) {
+  if (weather.ready) {
     return (
       <div className="Weather">
         <div className="wrapper">
@@ -30,21 +32,16 @@ export default function Weather() {
           <h1>Paris</h1>
           <div className="row">
             <div className="col">
-              <span className="time" id="date">
-                {" "}
-                Sunday 16:00{" "}
+              <span className="time">
+                <FormattedDate date={weather.date} />
               </span>
               <br />
-              <span className="description" id="weather-description">
-                {" "}
-                Sunny{" "}
-              </span>
+              <span className="description">{weather.description}</span>
             </div>
             <div className="col weather-today">
               <img
                 src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
-                alt="Sunny"
-                id="current-icon"
+                alt={weather.description}
               />
               <span className="temperture-today" id="current-temperture">
                 {Math.round(weather.temperture)}
@@ -55,7 +52,6 @@ export default function Weather() {
               <div className="humidity">Humidity: {weather.humidity} %</div>
               <div className="wind">Wind: {weather.wind} km/h</div>
             </div>
-            <div id="forecast"></div>
           </div>
         </div>
         <p className="refrence">
